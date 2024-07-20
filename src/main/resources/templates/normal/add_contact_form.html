@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>About</title>
+	<style>
+		.input-group-text {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: calc(2.5rem + 2px);
+		}
+
+		.input-group-text i {
+			font-size: 1.25rem;
+			/* Adjust the size of the icons */
+		}
+
+		.form-control {
+			height: calc(2.5rem + 2px);
+			/* Match the height of the input fields */
+		}
+	</style>
+	<!-- Font Awesome for icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+	<section>
+		<div class="card">
+			<div class="card-body">
+				<h1 class="text-center">Add Contact</h1>
+				<div class="container-fluid mt-1">
+					<div class="row">
+						<div class="col-md-10 offset-md-1">
+							<form action="#" th:object="${contact}" enctype="multipart/form-data" method="POST"
+								th:action="@{/user/process-contact}" class="mt-2">
+
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<div class="input-group-text mr-3">
+											<i class="fa fa-plus"></i>
+										</div>
+									</div>
+									<input type="text" name="name" id="firstName" placeholder="Enter name here"
+										class="form-control" required />
+								</div>
+
+								<div class="input-group mt-3">
+									<div class="input-group-prepend">
+										<div class="input-group-text mr-3">
+											<i class="fas fa-user-alt"></i>
+										</div>
+									</div>
+									<input type="text" name="secondName" id="secondName"
+										placeholder="Enter second name here" class="form-control" required />
+								</div>
+
+								<div class="input-group mt-3">
+									<div class="input-group-prepend">
+										<div class="input-group-text mr-3">
+											<i class="fas fa-briefcase"></i>
+										</div>
+									</div>
+									<input type="text" name="work" id="work" placeholder="Enter work here"
+										class="form-control" required />
+								</div>
+
+								<div class="input-group mt-3">
+									<div class="input-group-prepend">
+										<div class="input-group-text mr-3">
+											<i class="fas fa-envelope"></i>
+										</div>
+									</div>
+									<input type="email" name="email" id="email" placeholder="Enter email here"
+										class="form-control" required />
+								</div>
+
+								<div class="input-group mt-3">
+									<div class="input-group-prepend">
+										<div class="input-group-text mr-3">
+											<i class="fas fa-phone"></i>
+										</div>
+									</div>
+									<input type="text" name="phone" id="phone" placeholder="Enter phone here"
+										class="form-control" required />
+								</div>
+
+
+
+								<div class="input-group mt-3">
+									<div class="input-group-prepend">
+										<div class="input-group-text mr-3">
+											<i class="fas fa-align-left"></i>
+										</div>
+									</div>
+									<textarea name="description" id="description" placeholder="Enter description here"
+										class="form-control" rows="3"></textarea>
+								</div>
+								<div class="input-group mt-3">
+									<div class="input-group-prepend">
+										<div class="input-group-text mr-3">
+											<i class="fas fa-image"></i>
+										</div>
+									</div>
+									<input type="file" name="profileImage" id="image"/>
+								</div>
+
+								<div class="container mt-3">
+									<button type="submit" class="btn btn-outline-primary">Add Contact</button>
+								</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>
